@@ -15,6 +15,7 @@ export const Navigations = () => {
             <div className="main-layout">
                 <nav>
                     <img src={logo} alt="React Logo"/>
+
                     <ul>
                         <li>
                             <NavLink to="/lazy1" activeClassName="nav-active" exact>Lazy1</NavLink>
@@ -29,6 +30,7 @@ export const Navigations = () => {
                 </nav>
 
                 <Switch>
+
                     <Route path="/lazy1">
                         <LazyPage1/>
                     </Route>
@@ -38,6 +40,7 @@ export const Navigations = () => {
                     <Route path="/lazy3">
                         <LazyPage3/>
                     </Route>
+
                 </Switch>
             </div>
         </Router>
