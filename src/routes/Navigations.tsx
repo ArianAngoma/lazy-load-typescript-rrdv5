@@ -7,7 +7,8 @@ import {
 
 /* Importaciones propias */
 import logo from '../logo.svg';
-import {LazyPage1, LazyPage2, LazyPage3} from '../01-LazyLoad/pages';
+import {LazyPage2, LazyPage3} from '../01-LazyLoad/pages';
+import {ShoppingPage} from '../02-component-patterns/pages/ShoppingPage';
 
 export const Navigations = () => {
     return (
@@ -18,7 +19,7 @@ export const Navigations = () => {
 
                     <ul>
                         <li>
-                            <NavLink to="/lazy1" activeClassName="nav-active" exact>Lazy1</NavLink>
+                            <NavLink to="/shopping" activeClassName="nav-active" exact>Shopping</NavLink>
                         </li>
                         <li>
                             <NavLink to="/lazy2" activeClassName="nav-active" exact>Lazy2</NavLink>
@@ -31,8 +32,8 @@ export const Navigations = () => {
 
                 <Switch>
 
-                    <Route path="/lazy1">
-                        <LazyPage1/>
+                    <Route path="/shopping">
+                        <ShoppingPage/>
                     </Route>
                     <Route path="/lazy2">
                         <LazyPage2/>
