@@ -3,6 +3,7 @@ import {lazy, LazyExoticComponent} from 'react';
 /* Importaciones propias */
 // import {LazyPage1, LazyPage2, LazyPage3} from '../01-LazyLoad/pages';
 
+/* Tipo JSX */
 type JSXComponent = () => JSX.Element;
 
 /* Interfaz para las rutas */
