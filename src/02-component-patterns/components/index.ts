@@ -9,6 +9,7 @@ export {ProductImage} from './ProductImage';
 export {ProductTitle} from './ProductTitle';
 export {ProductButtons} from './ProductButtons';
 
+/* Asignar componentes a un componente */
 export const ProductCard: ProductCardHOCProps = Object.assign(ProductCardHOC, {
     Title: ProductTitle,
     Image: ProductImage,
