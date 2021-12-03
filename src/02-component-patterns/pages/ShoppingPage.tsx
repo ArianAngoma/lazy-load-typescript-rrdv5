@@ -23,6 +23,12 @@ export const ShoppingPage = () => {
                     <ProductTitle title={''}/>
                     <ProductButtons counter={} increaseBy={}/>
                 </ProductCard>
+
+                <ProductCard product={product}>
+                    <ProductCard.Image/>
+                    <ProductCard.Title title={'Cafe'}/>
+                    {/*<ProductCard.Buttons counter={} increaseBy={}/>*/}
+                </ProductCard>
             </div>
         </div>
     )
