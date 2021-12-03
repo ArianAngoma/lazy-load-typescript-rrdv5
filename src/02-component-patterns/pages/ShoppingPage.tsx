@@ -20,14 +20,14 @@ export const ShoppingPage = () => {
             }}>
                 <ProductCard product={product}>
                     <ProductImage/>
-                    <ProductTitle title={''}/>
-                    <ProductButtons counter={} increaseBy={}/>
+                    <ProductTitle title={'Cafe'}/>
+                    <ProductButtons/>
                 </ProductCard>
 
                 <ProductCard product={product}>
                     <ProductCard.Image/>
-                    <ProductCard.Title title={'Cafe'}/>
-                    {/*<ProductCard.Buttons counter={} increaseBy={}/>*/}
+                    <ProductCard.Title/>
+                    <ProductCard.Buttons/>
                 </ProductCard>
             </div>
         </div>
