@@ -16,6 +16,13 @@
     width: calc(100% - 20px);
 }
 
+.shopping-cart {
+    position: fixed;
+    right: 10px;
+    top: 0;
+}
+
+
 .custom-buttons button, .custom-buttons div {
     border-color: white;
     color: white;
