@@ -21,17 +21,6 @@ export const useShoppingCart = () => {
             /* Borrar el producto */
             const {[product.id]: toDelete, ...rest} = oldShoppingCart;
             return rest;
-
-            /* Otra forma */
-            /*if (count === 0) {
-                const {[product.id]: toDelete, ...rest} = oldShoppingCart;
-                return rest;
-            }
-
-            return {
-                ...oldShoppingCart,
-                [product.id]: {...product, count}
-            }*/
         })
     }
 
