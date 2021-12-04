@@ -29,8 +29,21 @@ export const ShoppingPage = () => {
 
     const onProductCountChange = ({count, product}: ProductCountChangeArgs) => {
         setShoppingCart(oldShoppingCart => {
-            /* Eliminar el producto llega a 0 */
-            if (count === 0) {
+            const productInCart: ProductInCart = oldShoppingCart[product.id] || {...product, count: 0};
+
+            if (Math.max(productInCart.count + count, 0) > 0) {
+                productInCart.count += count;
+                return {
+                    ...oldShoppingCart,
+                    [product.id]: productInCart
+                }
+            }
+
+            /* Borrar el producto */
+            const {[product.id]: toDelete, ...rest} = oldShoppingCart;
+            return rest;
+
+            /*if (count === 0) {
                 const {[product.id]: toDelete, ...rest} = oldShoppingCart;
                 return rest;
             }
@@ -38,7 +51,7 @@ export const ShoppingPage = () => {
             return {
                 ...oldShoppingCart,
                 [product.id]: {...product, count}
-            }
+            }*/
         })
     }
 
