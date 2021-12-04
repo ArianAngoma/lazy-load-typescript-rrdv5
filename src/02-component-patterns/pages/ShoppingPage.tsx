@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 /* Importaciones propias */
 import {ProductButtons, ProductImage, ProductTitle, ProductCard} from '../components';
-import {Product} from '../interfaces/interfaces';
+import {onChangeArgs as ProductCountChangeArgs, Product} from '../interfaces/interfaces';
 
 import '../styles/custom-styles.css';
 
@@ -27,8 +27,8 @@ interface ProductInCart extends Product {
 export const ShoppingPage = () => {
     const [shoppingCart, setShoppingCart] = useState<{ [key: string]: ProductInCart }>({});
 
-    const onProductCountChange = () => {
-        console.log('OnProductCountChange');
+    const onProductCountChange = ({count, product}: ProductCountChangeArgs) => {
+        console.log('OnProductCountChange', count, product);
     }
 
     return (
@@ -47,7 +47,7 @@ export const ShoppingPage = () => {
                         <ProductCard key={product.id}
                                      product={product}
                                      className="bg-dark text-white"
-                                     onChange={() => onProductCountChange()}>
+                                     onChange={onProductCountChange}>
                             <ProductImage className="custom-image"
                                           style={{
                                               boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.2)'
@@ -63,8 +63,7 @@ export const ShoppingPage = () => {
             <div className="shopping-cart">
                 <ProductCard product={product2}
                              className="bg-dark text-white"
-                             style={{width: '100px'}}
-                             onChange={() => onProductCountChange()}>
+                             style={{width: '100px'}}>
                     <ProductImage className="custom-image"
                                   style={{
                                       boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.2)'
