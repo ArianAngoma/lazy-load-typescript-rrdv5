@@ -17,7 +17,10 @@ export const useProduct = ({product, onChange, value = 0, initialValues}: usePro
     const isMounted = useRef(false);
 
     const increaseBy = (value: number) => {
-        const newValue = Math.max(counter + value, 0);
+        let newValue = Math.max(counter + value, 0);
+
+        if (initialValues?.maxCount) newValue = Math.min(newValue, initialValues.maxCount);
+
         setCounter(newValue);
 
         /* Si el onChange tiene valor, ejecutarlo */
