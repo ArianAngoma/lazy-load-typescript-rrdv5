@@ -23,11 +23,11 @@ export interface Props {
 
 export const ProductCard = ({children, product, className, style, onChange, value, initialValues}: Props) => {
     /* Hook para el producto */
-    const {counter, increaseBy} = useProduct({product, onChange, value, initialValues});
+    const {counter, increaseBy, maxCount} = useProduct({product, onChange, value, initialValues});
 
     return (
         <Provider value={{
-            counter, increaseBy, product
+            counter, increaseBy, product, maxCount
         }}>
             <div className={`${styles.productCard} ${className}`}
                  style={style}>

@@ -39,5 +39,5 @@ export const useProduct = ({product, onChange, value = 0, initialValues}: usePro
         isMounted.current = true;
     }, []);
 
-    return {counter, increaseBy}
+    return {counter, increaseBy, maxCount: initialValues?.maxCount}
 }
