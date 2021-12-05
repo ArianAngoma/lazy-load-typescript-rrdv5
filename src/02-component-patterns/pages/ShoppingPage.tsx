@@ -16,12 +16,12 @@ export const ShoppingPage = () => {
                          product={product}
                          className="bg-dark text-white"
                          initialValues={{
-                             count: 0,
-                             maxCount: 10
+                             count: 5,
+                             maxCount: 15
                          }}>
 
                 {
-                    (msg) => (
+                    ({reset}) => (
                         <>
                             <ProductImage className="custom-image"
                                           style={{
@@ -29,7 +29,8 @@ export const ShoppingPage = () => {
                                           }}/>
                             <ProductTitle className="text-bold"/>
                             <ProductButtons className="custom-buttons"/>
-                            <h1>{msg}</h1>
+
+                            <button onClick={reset}>Reset</button>
                         </>
                     )
                 }
