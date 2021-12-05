@@ -19,6 +19,7 @@ export const useProduct = ({product, onChange, value = 0, initialValues}: usePro
     const increaseBy = (value: number) => {
         let newValue = Math.max(counter + value, 0);
 
+        /* Si viene el valor máximo */
         if (initialValues?.maxCount) newValue = Math.min(newValue, initialValues.maxCount);
 
         setCounter(newValue);
@@ -33,6 +34,7 @@ export const useProduct = ({product, onChange, value = 0, initialValues}: usePro
         setCounter(value)
     }, [value]);
 
+    /* Efecto para que primer efecto no se ejecute al cargar el componente */
     useEffect(() => {
         isMounted.current = true;
     }, []);

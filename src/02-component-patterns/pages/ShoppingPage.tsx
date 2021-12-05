@@ -19,12 +19,21 @@ export const ShoppingPage = () => {
                              count: 0,
                              maxCount: 10
                          }}>
-                <ProductImage className="custom-image"
-                              style={{
-                                  boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.2)'
-                              }}/>
-                <ProductTitle className="text-bold"/>
-                <ProductButtons className="custom-buttons"/>
+
+                {
+                    (msg) => (
+                        <>
+                            <ProductImage className="custom-image"
+                                          style={{
+                                              boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.2)'
+                                          }}/>
+                            <ProductTitle className="text-bold"/>
+                            <ProductButtons className="custom-buttons"/>
+                            <h1>{msg}</h1>
+                        </>
+                    )
+                }
+
             </ProductCard>
 
         </div>

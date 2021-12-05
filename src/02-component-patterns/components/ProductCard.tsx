@@ -1,4 +1,4 @@
-import {createContext, CSSProperties, ReactElement} from 'react';
+import {createContext, CSSProperties} from 'react';
 
 /* Importaciones propias */
 import {useProduct} from '../hooks/useProduct';
@@ -12,7 +12,8 @@ const {Provider} = ProductContext;
 
 export interface Props {
     product: Product;
-    children?: ReactElement | ReactElement[];
+    // children?: ReactElement | ReactElement[];
+    children: (msg: string) => JSX.Element;
     className?: string;
     style?: CSSProperties;
     onChange?: (args: onChangeArgs) => void;
@@ -30,7 +31,7 @@ export const ProductCard = ({children, product, className, style, onChange, valu
         }}>
             <div className={`${styles.productCard} ${className}`}
                  style={style}>
-                {children}
+                {children('Hola Mundo')}
             </div>
         </Provider>
     )
