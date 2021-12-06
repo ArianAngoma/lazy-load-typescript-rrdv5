@@ -6,6 +6,8 @@ import {
 } from 'react-router-dom';
 
 /* Importaciones propias */
+import {RegisterPage} from '../03-forms/pages/RegisterPage';
+
 import logo from '../logo.svg';
 
 export const Navigations = () => {
@@ -16,7 +18,7 @@ export const Navigations = () => {
                     <img src={logo} alt="React Logo"/>
                     <ul>
                         <li>
-                            <NavLink to="/" activeClassName="nav-active" exact>Home</NavLink>
+                            <NavLink to="/register" activeClassName="nav-active" exact>Register Page</NavLink>
                         </li>
                         <li>
                             <NavLink to="/about" activeClassName="nav-active" exact>About</NavLink>
@@ -28,8 +30,8 @@ export const Navigations = () => {
                 </nav>
 
                 <Switch>
-                    <Route path="/about">
-                        <h1>About</h1>
+                    <Route path="/register">
+                        <RegisterPage/>
                     </Route>
                     <Route path="/users">
                         <h1>Users</h1>
