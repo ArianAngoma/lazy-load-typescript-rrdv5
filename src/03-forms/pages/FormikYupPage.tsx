@@ -4,14 +4,16 @@ import * as Yup from 'yup';
 /* Importaciones propias */
 import '../styles/styles.css';
 
-interface FormValues {
-    firstName: string,
-    lastName: string,
-    email: string
-}
-
 export const FormikYupPage = () => {
-    const {handleChange, values, handleSubmit, errors, touched, handleBlur} = useFormik({
+    const {
+        // handleChange,
+        // values,
+        handleSubmit,
+        errors,
+        touched,
+        // handleBlur,
+        getFieldProps
+    } = useFormik({
         initialValues: {
             firstName: '',
             lastName: '',
@@ -34,10 +36,7 @@ export const FormikYupPage = () => {
                   onSubmit={handleSubmit}>
                 <label htmlFor="firstName">First Name</label>
                 <input type="text"
-                       name="firstName"
-                       onBlur={handleBlur}
-                       onChange={handleChange}
-                       value={values.firstName}/>
+                       {...getFieldProps('firstName')}/>
                 {
                     (touched.firstName && errors.firstName) && (
                         <span>{errors.firstName}</span>
@@ -46,10 +45,7 @@ export const FormikYupPage = () => {
 
                 <label htmlFor="lastName">Last Name</label>
                 <input type="text"
-                       name="lastName"
-                       onBlur={handleBlur}
-                       onChange={handleChange}
-                       value={values.lastName}/>
+                       {...getFieldProps('lastName')}/>
                 {
                     (touched.lastName && errors.lastName) && (
                         <span>{errors.lastName}</span>
@@ -58,10 +54,7 @@ export const FormikYupPage = () => {
 
                 <label htmlFor="email">Email Address</label>
                 <input type="email"
-                       name="email"
-                       onBlur={handleBlur}
-                       onChange={handleChange}
-                       value={values.email}/>
+                       {...getFieldProps('email')}/>
                 {
                     (touched.email && errors.email) && (
                         <span>{errors.email}</span>
