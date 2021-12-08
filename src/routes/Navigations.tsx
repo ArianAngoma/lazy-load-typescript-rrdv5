@@ -6,11 +6,7 @@ import {
 } from 'react-router-dom';
 
 /* Importaciones propias */
-import {RegisterPage} from '../03-forms/pages/RegisterPage';
-import {FormikBasicPage} from '../03-forms/pages/FormikBasicPage';
-import {FormikYupPage} from '../03-forms/pages/FormikYupPage';
-import {FormikComponents} from '../03-forms/pages/FormikComponents';
-import {FormikAbstraction} from '../03-forms/pages/FormikAbstraction';
+import {FormikAbstraction, FormikComponents, FormikYupPage, FormikBasicPage, RegisterPage} from '../03-forms/pages';
 
 import logo from '../logo.svg';
 
@@ -31,10 +27,12 @@ export const Navigations = () => {
                             <NavLink to="/formik-yup" activeClassName="nav-active" exact>Formik Yup Page</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/formik-components" activeClassName="nav-active" exact>Formik Components</NavLink>
+                            <NavLink to="/formik-components" activeClassName="nav-active" exact>Formik
+                                Components</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/formik-abstractions" activeClassName="nav-active" exact>Formik Abstractions</NavLink>
+                            <NavLink to="/formik-abstractions" activeClassName="nav-active" exact>Formik
+                                Abstractions</NavLink>
                         </li>
                     </ul>
                 </nav>
