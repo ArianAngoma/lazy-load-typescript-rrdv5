@@ -12,5 +12,12 @@
     "placeholder": "Angoma",
     "label": "Last Name",
     "value": ""
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "arian.angoma.js@gmail.com",
+    "label": "Email",
+    "value": ""
   }
 ]
