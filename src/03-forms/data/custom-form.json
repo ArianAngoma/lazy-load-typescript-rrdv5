@@ -1,0 +1,16 @@
+[
+  {
+    "type": "input",
+    "name": "firsName",
+    "placeholder": "Arian",
+    "label": "Firs Name",
+    "value": ""
+  },
+  {
+    "type": "input",
+    "name": "lastName",
+    "placeholder": "Angoma",
+    "label": "Last Name",
+    "value": ""
+  }
+]
