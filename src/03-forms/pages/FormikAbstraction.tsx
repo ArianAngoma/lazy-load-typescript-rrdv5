@@ -2,12 +2,14 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 
 /* Importaciones propias */
+import {MyTextInput} from '../components/MyTextInput';
+
 import '../styles/styles.css';
 
-export const FormikComponents = () => {
+export const FormikAbstraction = () => {
     return (
         <div>
-            <h1>Formik Components</h1>
+            <h1>Formik Abstraction</h1>
 
             <Formik
                 initialValues={{
@@ -32,17 +34,17 @@ export const FormikComponents = () => {
                 {
                     (formik) => (
                         <Form>
-                            <label htmlFor="firstName">First Name</label>
-                            <Field type="text" name="firstName" placeholder="First Name"/>
-                            <ErrorMessage name="firstName" component="span"/>
+                            <MyTextInput
+                                label="First Name"
+                                name="firstName"/>
 
-                            <label htmlFor="lastName">Last Name</label>
-                            <Field type="text" name="lastName"/>
-                            <ErrorMessage name="lastName" component="span"/>
+                            <MyTextInput
+                                label="Last Name"
+                                name="lastName"/>
 
-                            <label htmlFor="email">Email Address</label>
-                            <Field type="email" name="email"/>
-                            <ErrorMessage name="email" component="span"/>
+                            <MyTextInput
+                                label="Email"
+                                name="email"/>
 
                             <label htmlFor="jobType">Job Type</label>
                             <Field as="select" name="jobType">
