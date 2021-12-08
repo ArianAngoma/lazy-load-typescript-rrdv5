@@ -13,7 +13,9 @@ export const FormikComponents = () => {
                 initialValues={{
                     firstName: '',
                     lastName: '',
-                    email: ''
+                    email: '',
+                    terms: false,
+                    jobType: ''
                 }}
                 onSubmit={(values) => {
                     console.log(values);
@@ -22,7 +24,9 @@ export const FormikComponents = () => {
                     Yup.object({
                         firstName: Yup.string().max(15, 'Debe de tener 15 caracteres o menos').required('Requerido'),
                         lastName: Yup.string().max(10, 'Debe de tener 10 caracteres o menos').required('Requerido'),
-                        email: Yup.string().email('El correo no tiene un formato válido').required('Requerido')
+                        email: Yup.string().email('El correo no tiene un formato válido').required('Requerido'),
+                        terms: Yup.boolean().oneOf([true], 'Debe de aceptar las condiciones'),
+                        jobType: Yup.string().notOneOf(['it-jr'], 'Esta opción no es permitida').required('Requerido')
                     })}
             >
                 {
@@ -39,6 +43,22 @@ export const FormikComponents = () => {
                             <label htmlFor="email">Email Address</label>
                             <Field type="email" name="email"/>
                             <ErrorMessage name="email" component="span"/>
+
+                            <label htmlFor="jobType">Job Type</label>
+                            <Field as="select" name="jobType">
+                                <option value="">Pick something</option>
+                                <option value="developer">Developer</option>
+                                <option value="designer">Designer</option>
+                                <option value="it-senior">It Senior</option>
+                                <option value="it-jr">It Jr.</option>
+                            </Field>
+                            <ErrorMessage name="jobType" component="span"/>
+
+                            <label>
+                                <Field type="checkbox" name="terms"/>
+                                Terms and conditions
+                            </label>
+                            <ErrorMessage name="terms" component="span"/>
 
                             <button type="submit">Submit</button>
                         </Form>
