@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 
 /* Importaciones propias */
 import {MyTextInput} from '../components/MyTextInput';
+import {MySelect} from '../components/MySelect';
 
 import '../styles/styles.css';
 
@@ -36,25 +37,26 @@ export const FormikAbstraction = () => {
                         <Form>
                             <MyTextInput
                                 label="First Name"
-                                name="firstName"/>
+                                name="firstName"
+                                type="text"/>
 
                             <MyTextInput
                                 label="Last Name"
-                                name="lastName"/>
+                                name="lastName"
+                                type="text"/>
 
                             <MyTextInput
                                 label="Email"
-                                name="email"/>
+                                name="email"
+                                type="email"/>
 
-                            <label htmlFor="jobType">Job Type</label>
-                            <Field as="select" name="jobType">
+                            <MySelect label="Job Type" name="jobType">
                                 <option value="">Pick something</option>
                                 <option value="developer">Developer</option>
                                 <option value="designer">Designer</option>
                                 <option value="it-senior">It Senior</option>
                                 <option value="it-jr">It Jr.</option>
-                            </Field>
-                            <ErrorMessage name="jobType" component="span"/>
+                            </MySelect>
 
                             <label>
                                 <Field type="checkbox" name="terms"/>
