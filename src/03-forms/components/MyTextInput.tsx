@@ -6,7 +6,7 @@ interface Props {
     type?: 'text' | 'email' | 'password';
     placeholder?: string;
 
-    [x: string]: any
+    [x: string]: any;
 }
 
 export const MyTextInput = ({label, ...props}: Props) => {

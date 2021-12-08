@@ -1,9 +1,10 @@
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {Formik, Form} from 'formik';
 import * as Yup from 'yup';
 
 /* Importaciones propias */
 import {MyTextInput} from '../components/MyTextInput';
 import {MySelect} from '../components/MySelect';
+import {MyCheckbox} from '../components/MyCheckbox';
 
 import '../styles/styles.css';
 
@@ -17,8 +18,8 @@ export const FormikAbstraction = () => {
                     firstName: '',
                     lastName: '',
                     email: '',
-                    terms: false,
-                    jobType: ''
+                    jobType: '',
+                    terms: false
                 }}
                 onSubmit={(values) => {
                     console.log(values);
@@ -28,8 +29,8 @@ export const FormikAbstraction = () => {
                         firstName: Yup.string().max(15, 'Debe de tener 15 caracteres o menos').required('Requerido'),
                         lastName: Yup.string().max(10, 'Debe de tener 10 caracteres o menos').required('Requerido'),
                         email: Yup.string().email('El correo no tiene un formato válido').required('Requerido'),
-                        terms: Yup.boolean().oneOf([true], 'Debe de aceptar las condiciones'),
-                        jobType: Yup.string().notOneOf(['it-jr'], 'Esta opción no es permitida').required('Requerido')
+                        jobType: Yup.string().notOneOf(['it-jr'], 'Esta opción no es permitida').required('Requerido'),
+                        terms: Yup.boolean().oneOf([true], 'Debe de aceptar las condiciones')
                     })}
             >
                 {
@@ -58,11 +59,7 @@ export const FormikAbstraction = () => {
                                 <option value="it-jr">It Jr.</option>
                             </MySelect>
 
-                            <label>
-                                <Field type="checkbox" name="terms"/>
-                                Terms and conditions
-                            </label>
-                            <ErrorMessage name="terms" component="span"/>
+                            <MyCheckbox label="Terms and Conditions" name="terms"/>
 
                             <button type="submit">Submit</button>
                         </Form>
