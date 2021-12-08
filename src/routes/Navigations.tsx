@@ -6,7 +6,14 @@ import {
 } from 'react-router-dom';
 
 /* Importaciones propias */
-import {FormikAbstraction, FormikComponents, FormikYupPage, FormikBasicPage, RegisterPage} from '../03-forms/pages';
+import {
+    FormikAbstraction,
+    FormikComponents,
+    FormikYupPage,
+    FormikBasicPage,
+    RegisterPage,
+    RegisterFormikPage
+} from '../03-forms/pages';
 
 import logo from '../logo.svg';
 
@@ -31,8 +38,8 @@ export const Navigations = () => {
                                 Components</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/formik-abstractions" activeClassName="nav-active" exact>Formik
-                                Abstractions</NavLink>
+                            <NavLink to="/formik-register" activeClassName="nav-active" exact>Register
+                                Formik</NavLink>
                         </li>
                     </ul>
                 </nav>
@@ -52,6 +59,9 @@ export const Navigations = () => {
                     </Route>
                     <Route path="/formik-abstractions">
                         <FormikAbstraction/>
+                    </Route>
+                    <Route path="/formik-register">
+                        <RegisterFormikPage/>
                     </Route>
                 </Switch>
             </div>
