@@ -1,23 +1,40 @@
 import {Formik, Form} from 'formik';
+import * as Yup from 'yup';
 
 /* Importaciones propias */
 import {MySelect, MyTextInput} from '../components';
 import formJson from '../data/custom-form.json';
 
 const initialValues: { [key: string]: any } = {};
+const requiredFields: { [key: string]: any } = {};
 
 for (const input of formJson) {
-    initialValues[input.name] = input.value
+    initialValues[input.name] = input.value;
+
+    /* Si no tiene validaciones salir del ciclo */
+    if (!input.validations) continue;
+
+    let schema = Yup.string();
+
+    for (const rule of input.validations) {
+        if (rule.type === 'required') {
+            schema = schema.required('Este campo es requerido')
+        }
+    }
+
+    requiredFields[input.name] = schema;
 }
 
-export const DynamicFormPage = () => {
+const validationSchema = Yup.object({...requiredFields});
 
+export const DynamicFormPage = () => {
     return (
         <div>
             <h1>Dynamic Form Page</h1>
 
             <Formik
                 initialValues={initialValues}
+                validationSchema={validationSchema}
                 onSubmit={(values) => {
                     console.log(values);
                 }}
@@ -55,7 +72,7 @@ export const DynamicFormPage = () => {
                                             </MySelect>
                                         )
                                     }
-                                    
+
                                     throw new Error(`El type: ${type} no es soportado`);
                                 })
                             }
