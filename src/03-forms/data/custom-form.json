@@ -8,6 +8,10 @@
     "validations": [
       {
         "type": "required"
+      },
+      {
+        "type": "minLength",
+        "value": 5
       }
     ]
   },
@@ -16,14 +20,27 @@
     "name": "lastName",
     "placeholder": "Angoma",
     "label": "Last Name",
-    "value": ""
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ]
   },
   {
     "type": "email",
     "name": "email",
     "placeholder": "arian.angoma.js@gmail.com",
     "label": "Email",
-    "value": ""
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "email"
+      }
+    ]
   },
   {
     "type": "select",
@@ -42,6 +59,11 @@
       {
         "id": "3",
         "label": "Resident Evil"
+      }
+    ],
+    "validations": [
+      {
+        "type": "required"
       }
     ]
   }
